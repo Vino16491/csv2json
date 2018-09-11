@@ -1,0 +1,30 @@
+{
+  "name": "csv2json",
+  "version": "1.0.0",
+  "description": "csv to json conversion",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vino16491/csv2json.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "vinod16491",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vino16491/csv2json/issues"
+  },
+  "homepage": "https://github.com/Vino16491/csv2json#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

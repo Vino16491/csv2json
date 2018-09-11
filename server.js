@@ -1,7 +1,11 @@
 /* csv to json */
 
-function getcsv() {
-  console.log("csv data check");
+function getcsv(csvfile) {
+  console.log("csv data check" + csvfile);
+  x = csvfile;
+  document.getElementById('csvfiletoJson').value = x;
+
+  return false;
 }
 
 function clearData() {
