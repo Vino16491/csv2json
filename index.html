@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="server.js"></script>
+</head>
+
+<body>
+    <div id="csvfileUpload">
+        <form onsubmit="getcsv(csvfile)">
+
+            <label for="csvfile">CSV File Upload</label>
+            <input type="file" name="csvfile" id="csvfile">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="csvfiletoJson">
+        <p></p>
+    </div>
+
+</body>
+
+</html>
