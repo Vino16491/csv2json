@@ -1,20 +1,20 @@
 /* csv to json */
 
-/** @package @constant express is imported and
- * @constant cjApp is used for get post api request */
-const express = require ('express');
-const cjApp = express(); 
+const express = require ('express'),
+      app = express(),
+      http = require('http'),
+      upload = require('express-fileupload'),
+      fs = require('fs');
+let jsonData = 'test';
+app.use(upload());
 
-/** @constant http is used to host local server on port 8009  */
-const http = require('http').Server(cjApp).listen(8009)
-console.log('server started on port 8009')
-
-/* get request to send default html file for file upload */
-cjApp.get('/', (req, res, next)=>{
+app.get('/', (req, res, next)=>{
   res.sendFile(__dirname+'/index.html')
 })
 
-
+app.post('/file',(req, res)=>{
+  res.send(jsonData);
+})
 
 function getcsv(csvfile) {
   console.log("csv data check" + csvfile);
@@ -35,3 +35,5 @@ function convertData() {
 function formatData() {
   console.log("format data as per requirement");
 }
+http.Server(app).listen(8009)
+console.log('server started on port 8009')
