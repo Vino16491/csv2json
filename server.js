@@ -14,10 +14,7 @@ app.get("/", (req, res, next) => {
 
 app.post("/file", (req, res) => {
   jsonData = req.files.csvfile.data.toString('utf8');
-  return csvtojson().fromString(jsonData).then(json => {
-    res.status(201).json({ ...json
-    })
-  })
+  return csvtojson().fromString(jsonData).then(json => {return res.status(201).json(...json)})
 });
 
 app.listen(process.env.PORT || 4000, function(){
