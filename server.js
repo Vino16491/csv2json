@@ -3,8 +3,8 @@
 const express = require("express"),
   app = express(),
   upload = require("express-fileupload"),
-  csvtojson = require("csvtojson"),
-  fs = require("fs");
+  csvtojson = require("csvtojson");
+  
 let jsonData = "test";
 app.use(upload());
 
