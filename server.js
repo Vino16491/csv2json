@@ -5,7 +5,7 @@ const express = require("express"),
   upload = require("express-fileupload"),
   csvtojson = require("csvtojson");
   
-let jsonData = "test";
+let csvData = "test";
 app.use(upload());
 
 app.get("/", (req, res, next) => {
@@ -13,8 +13,8 @@ app.get("/", (req, res, next) => {
 });
 
 app.post("/file", (req, res) => {
-  jsonData = req.files.csvfile.data.toString('utf8');
-  return csvtojson().fromString(jsonData).then(json => {return res.status(201).json({...json})})
+  csvData = req.files.csvfile.data.toString('utf8');
+  return csvtojson().fromString(csvData).then(json => {return res.status(201).json({csv:csvData, json:json})})
 });
 
 app.listen(process.env.PORT || 4000, function(){
