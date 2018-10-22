@@ -24,7 +24,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.post("/file", (req, res) => {
-  csvData = req.files.csvfile.data.toString('utf8');
+  csvData = req.files[0].data.toString('utf8');
   return csvtojson().fromString(csvData).then(json => {return res.status(201).json({csv:csvData, json:json})})
 });
 
