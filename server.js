@@ -2,12 +2,14 @@
 
 const express = require("express"),
   app = express(),
+  cors = require('cors'),
   upload = require("express-fileupload"),
   csvtojson = require("csvtojson");
   
 let csvData = "test";
 app.use(upload());
-app.use(function(req, res, next) {
+app.use(cors());
+/*app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Headers",
@@ -19,6 +21,7 @@ app.use(function(req, res, next) {
   );
   next();
 });
+*/
 app.get("/", (req, res, next) => {
   res.sendFile(__dirname + "/index.html");
 });
