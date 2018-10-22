@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Vino16491/csv2json#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "csvtojson": "^2.0.8",
     "express": "^4.16.3",
     "express-fileupload": "^0.4.0"
