@@ -8,7 +8,7 @@ const express = require("express"),
 let csvData = "test";
 app.use(upload());
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*", "https://chartreport.stackblitz.io/");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
