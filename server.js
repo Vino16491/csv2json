@@ -3,6 +3,8 @@
 const express = require("express"),
   app = express(),
   cors = require('cors'),
+  multer = require('multer'),
+  uploadedData = multer(),
   upload = require("express-fileupload"),
   csvtojson = require("csvtojson");
   
@@ -26,9 +28,11 @@ app.get("/", (req, res, next) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/file", (req, res) => {
-  csvData = req.files[0].data.toString('utf8');
-  return csvtojson().fromString(csvData).then(json => {return res.status(201).json({csv:csvData, json:json})})
+app.post("/file", uploadedData.fields([]),(req, res) => {
+  let formData = req.body;
+ // csvData = req.files[0].data.toString('utf8');
+ // return csvtojson().fromString(csvData).then(json => {return res.status(201).json({csv:csvData, json:json})})
+  return res.status(200).json({...formData});
 });
 
 app.listen(process.env.PORT || 4000, function(){
